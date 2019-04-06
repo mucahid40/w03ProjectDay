@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import reducer from './reducer'
 
 class App extends Component {
 
@@ -39,14 +40,6 @@ addSystem (manufacturer,year,origin){
 }
 }
 
-  addSystem2 (state = [], action = []) {
-    switch (action.type){
-      case 'ADD_MODEL':
-      return [...state, action.payload]
-      default:
-        return state
-    }
-  }
 
   
 
@@ -63,7 +56,7 @@ addSystem (manufacturer,year,origin){
             })
           }
         </select>
-        <button onClick={this.addSystem2("test", 2, "something")}>Add</button>
+        <button onClick={reducer("test", 2, "something")}>Add</button>
       </div>
     );
   
